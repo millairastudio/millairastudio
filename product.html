@@ -1,1 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Custom Character Figure | Millaira Studio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111;
+      background: #fff;
+    }
+
+    header {
+      height: 72px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8%;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      margin-left: 28px;
+      text-decoration: none;
+      color: #111;
+      font-size: 14px;
+    }
+
+    .product-page {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 8% 100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .product-image img {
+      width: 100%;
+      display: block;
+    }
+
+    .product-info small {
+      letter-spacing: 3px;
+      font-weight: bold;
+      font-size: 11px;
+    }
+
+    .product-info h1 {
+      font-size: 48px;
+      line-height: 1.05;
+      margin: 18px 0;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 25px 0;
+    }
+
+    .description {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .details {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      padding: 20px 0;
+      margin-bottom: 35px;
+    }
+
+    .details p {
+      margin: 10px 0;
+      color: #444;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #bbb;
+      background: white;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    input[type="file"] {
+      padding: 12px;
+    }
+
+    .note {
+      font-size: 12px;
+      color: #777;
+      margin-top: 7px;
+    }
+
+    .order-button {
+      width: 100%;
+      border: none;
+      background: #111;
+      color: white;
+      padding: 18px;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+
+    .shipping {
+      font-size: 12px;
+      color: #777;
+      line-height: 1.6;
+      margin-top: 20px;
+    }
+
+    footer {
+      border-top: 1px solid #ddd;
+      padding: 40px 8%;
+      color: #666;
+      font-size: 13px;
+    }
+
+    @media (max-width: 750px) {
+
+      header {
+        padding: 0 5%;
+      }
+
+      nav a {
+        margin-left: 8px;
+        font-size: 11px;
+      }
+
+      .product-page {
+        display: block;
+        padding: 45px 5% 70px;
+      }
+
+      .product-image {
+        margin-bottom: 45px;
+      }
+
+      .product-info h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    MILLAIRA STUDIO
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="#">Work</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+</header>
+
+
+<main class="product-page">
+
+
+  <section class="product-image">
+
+    <img
+      src="hero-figure.jpg"
+      alt="Millaira Studio handmade custom character figure"
+    >
+
+  </section>
+
+
+  <section class="product-info">
+
+    <small>
+      HANDMADE • CUSTOM • MADE TO ORDER
+    </small>
+
+    <h1>
+      Custom Character Figure
+    </h1>
+
+    <div class="price">
+      $199 – $399
+    </div>
+
+    <p class="description">
+      A handmade character figure created specifically
+      from your Minecraft skin, original character,
+      artwork, or reference image.
+    </p>
+
+
+    <div class="details">
+
+      <p>📏 Approximately 32 cm tall</p>
+
+      <p>🎨 Handmade and individually customized</p>
+
+      <p>🧩 Custom character design</p>
+
+      <p>📦 Made to order</p>
+
+      <p>🌎 International shipping available</p>
+
+    </div>
+
+
+    <form>
+
+
+      <div class="form-group">
+
+        <label for="character">
+          CHARACTER NAME / USERNAME
+        </label>
+
+        <input
+          type="text"
+          id="character"
+          name="character"
+          placeholder="Your Minecraft username or character name"
+        >
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="custom">
+
+          WHAT WOULD YOU LIKE ME TO CUSTOMIZE?
+
+        </label>
+
+        <textarea
+          id="custom"
+          name="custom"
+          placeholder="Tell me about your character, clothing, colors, accessories, pose, or other details..."
+        ></textarea>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="reference">
+
+          UPLOAD YOUR REFERENCE IMAGE
+
+        </label>
+
+        <input
+          type="file"
+          id="reference"
+          name="reference"
+          accept=".png,.jpg,.jpeg"
+        >
+
+        <div class="note">
+          PNG or JPG recommended.
+        </div>
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label for="complexity">
+          PROJECT COMPLEXITY
+        </label>
+
+        <select id="complexity" name="complexity">
+
+          <option value="">
+            Select an option
+          </option>
+
+          <option value="standard">
+            Standard Character — from $199
+          </option>
+
+          <option value="detailed">
+            Detailed Character — from $299
+          </option>
+
+          <option value="collector">
+            Collector / Complex Character — from $399
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="order-button"
+        onclick="alert('Thank you! Your custom request is ready for checkout. Shopify checkout will be connected here next.')"
+      >
+        ORDER THIS FIGURE
+      </button>
+
+
+      <p class="shipping">
+
+        Because every figure is handmade and customized,
+        production time may vary depending on the complexity
+        of your character. Final pricing will be confirmed
+        before production begins.
+
+      </p>
+
+    </form>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  © 2026 Millaira Studio — Handmade Character Figures
+
+</footer>
+
+</body>
+</html>
