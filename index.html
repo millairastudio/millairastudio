@@ -1,153 +1,740 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+  <title>Millaira Studio — Handmade Character Figures</title>
 
-    <title>Millaira Studio</title>
+  <meta
+    name="description"
+    content="Custom handmade character figures created from your Minecraft skin, original character, or imagination."
+  >
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f7f5f0;
-            color: #1a1a1a;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 24px 6%;
-            border-bottom: 1px solid #ddd;
-        }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #171717;
+      background: #f7f5f0;
+      line-height: 1.6;
+    }
 
-        .logo {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: #1a1a1a;
-        }
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-        .hero {
-            min-height: 75vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 60px 20px;
-        }
+    /* NAVIGATION */
 
-        .hero-content {
-            max-width: 800px;
-        }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(247, 245, 240, 0.95);
+      border-bottom: 1px solid #dedbd4;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 22px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.55;
+    }
+
+    /* HERO */
+
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 30px 100px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text {
+      padding: 20px 0;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(52px, 7vw, 92px);
+      line-height: 0.95;
+      letter-spacing: -4px;
+      margin-bottom: 30px;
+    }
+
+    .hero p {
+      max-width: 480px;
+      font-size: 18px;
+      color: #5d5b57;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 16px 28px;
+      background: #171717;
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      opacity: 0.85;
+    }
+
+    .hero-image {
+      background: #e5e1d8;
+      min-height: 580px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 580px;
+      object-fit: cover;
+    }
+
+    /* INTRO */
+
+    .intro {
+      background: #171717;
+      color: white;
+      padding: 90px 30px;
+      text-align: center;
+    }
+
+    .intro-inner {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .intro h2 {
+      font-size: clamp(36px, 5vw, 62px);
+      line-height: 1;
+      margin-bottom: 25px;
+      letter-spacing: -2px;
+    }
+
+    .intro p {
+      color: #c8c6c1;
+      font-size: 17px;
+    }
+
+    /* PRODUCTS */
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 30px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: 42px;
+      letter-spacing: -2px;
+    }
+
+    .section-heading p {
+      max-width: 420px;
+      color: #66635d;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      background: white;
+      border: 1px solid #e0ddd6;
+    }
+
+    .product-image {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #e6e2da;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 22px;
+    }
+
+    .product-info h3 {
+      font-size: 19px;
+      margin-bottom: 6px;
+    }
+
+    .product-info p {
+      color: #706d67;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    /* PROCESS */
+
+    .process {
+      border-top: 1px solid #dedbd4;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .step-number {
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .step h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: #6a6761;
+      font-size: 14px;
+    }
+
+    /* COMMISSION */
+
+    .commission {
+      background: #ded9ce;
+    }
+
+    .commission-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 30px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .commission h2 {
+      font-size: clamp(40px, 5vw, 65px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .commission p {
+      color: #57544e;
+      max-width: 500px;
+      margin-bottom: 30px;
+    }
+
+    .commission-list {
+      list-style: none;
+    }
+
+    .commission-list li {
+      padding: 13px 0;
+      border-bottom: 1px solid #bbb6ab;
+      font-size: 15px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      text-align: center;
+    }
+
+    .about-inner {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .about h2 {
+      font-size: 45px;
+      margin-bottom: 25px;
+    }
+
+    .about p {
+      color: #66635d;
+      font-size: 17px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #171717;
+      color: white;
+      padding: 60px 30px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    footer p {
+      color: #aaa7a0;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      nav {
+        padding: 18px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 20px 60px;
+        gap: 35px;
+      }
 
       .hero h1 {
-            font-size: clamp(48px, 8vw, 100px);
-            line-height: 0.95;
-            margin-bottom: 25px;
-        }
+        letter-spacing: -2px;
+      }
 
-        .hero p {
-            font-size: 20px;
-            line-height: 1.6;
-            margin-bottom: 35px;
-        }
+      .hero-image,
+      .hero-image img {
+        min-height: 420px;
+        height: 420px;
+      }
 
-        .button {
-            display: inline-block;
-            padding: 16px 30px;
-            background: #1a1a1a;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-        }
+      .section {
+        padding: 70px 20px;
+      }
 
-        .section {
-            padding: 100px 6%;
-            text-align: center;
-        }
+      .section-heading {
+        display: block;
+      }
 
-        .section h2 {
-            font-size: 42px;
-            margin-bottom: 20px;
-        }
+      .section-heading h2 {
+        margin-bottom: 15px;
+      }
 
-        footer {
-            padding: 40px 6%;
-            text-align: center;
-            border-top: 1px solid #ddd;
-        }
-    </style>
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .commission-inner {
+        grid-template-columns: 1fr;
+        padding: 70px 20px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">MILLAIRA STUDIO</div>
+  <!-- NAVIGATION -->
 
+  <header>
     <nav>
-        <a href="#">Shop</a>
-        <a href="#">Work</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
-</header>
+      <a href="#" class="logo">MILLAIRA STUDIO</a>
 
-<main>
+      <div class="nav-links">
+        <a href="#shop">Shop</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
 
     <section class="hero">
 
-        <div class="hero-content">
+      <div class="hero-text">
 
-            <h1>
-                HANDMADE
-                CHARACTERS
-            </h1>
-
-            <p>
-                Custom handmade figures created
-                from your character and imagination.
-            </p>
-
-            <a href="#" class="button">
-                SHOP HANDMADE
-            </a>
-
+        <div class="eyebrow">
+          Handmade • Custom • One of a Kind
         </div>
+
+        <h1>
+          HANDMADE<br>
+          CHARACTERS
+        </h1>
+
+        <p>
+          Custom handmade figures created from your Minecraft skin,
+          original character, or imagination.
+        </p>
+
+        <a href="#shop" class="button">
+          SHOP HANDMADE
+        </a>
+
+      </div>
+
+      <div class="hero-image">
+        <img src="hero-figure.jpg" alt="Custom handmade character figure by Millaira Studio">
+      </div>
 
     </section>
 
-    <section class="section">
+
+    <!-- INTRO -->
+
+    <section class="intro">
+
+      <div class="intro-inner">
 
         <h2>
-            Made For You.
+          Your character.<br>
+          Made real.
         </h2>
 
         <p>
-            Millaira Studio creates handmade
-            character collectibles and creative artwork.
+          Every figure is individually handmade and made to order.
+          No two pieces are exactly the same.
         </p>
+
+      </div>
 
     </section>
 
-</main>
 
-<footer>
-    © 2026 Millaira Studio
-</footer>
+    <!-- SHOP -->
+
+    <section class="section" id="shop">
+
+      <div class="section-heading">
+
+        <div>
+          <div class="eyebrow">The Collection</div>
+          <h2>Featured Handmade</h2>
+        </div>
+
+        <p>
+          Custom character figures made by hand.
+          Starting from $199.
+        </p>
+
+      </div>
+
+
+      <div class="products">
+
+        <article class="product-card">
+
+          <div class="product-image">
+            <img src="hero-figure.jpg" alt="Custom Minecraft character figure">
+          </div>
+
+          <div class="product-info">
+
+            <h3>Custom Character Figure</h3>
+
+            <p>
+              Handmade figure based on your character design.
+            </p>
+
+            <div class="price">
+              From $199
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+          <div class="product-image">
+            <img src="hero-figure.jpg" alt="Custom character collectible">
+          </div>
+
+          <div class="product-info">
+
+            <h3>Premium Character</h3>
+
+            <p>
+              More detailed custom designs and accessories.
+            </p>
+
+            <div class="price">
+              From $299
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="product-card">
+
+          <div class="product-image">
+            <img src="hero-figure.jpg" alt="One of a kind handmade figure">
+          </div>
+
+          <div class="product-info">
+
+            <h3>Collector Commission</h3>
+
+            <p>
+              Complex characters with advanced details.
+            </p>
+
+            <div class="price">
+              From $399
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROCESS -->
+
+    <section class="section process" id="work">
+
+      <div class="section-heading">
+
+        <div>
+          <div class="eyebrow">How It Works</div>
+          <h2>From skin to figure.</h2>
+        </div>
+
+      </div>
+
+
+      <div class="steps">
+
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Choose</h3>
+          <p>
+            Select the handmade figure commission
+            that fits your character.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>Send</h3>
+          <p>
+            Send your Minecraft skin, artwork,
+            or character reference.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>Made by hand</h3>
+          <p>
+            Your character is carefully constructed
+            and finished by hand.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">04</div>
+          <h3>Delivered</h3>
+          <p>
+            Your finished one-of-a-kind figure
+            is carefully prepared for shipping.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COMMISSION -->
+
+    <section class="commission">
+
+      <div class="commission-inner">
+
+        <div>
+
+          <div class="eyebrow">
+            Custom Commission
+          </div>
+
+          <h2>
+            Bring your character into the real world.
+          </h2>
+
+          <p>
+            Have a character that is uniquely yours?
+            Millaira Studio creates handmade figures
+            based on your own designs and references.
+          </p>
+
+          <a href="#contact" class="button">
+            START A COMMISSION
+          </a>
+
+        </div>
+
+
+        <ul class="commission-list">
+
+          <li>Custom Minecraft skins</li>
+          <li>Original characters</li>
+          <li>Custom colors & outfits</li>
+          <li>Accessories & details</li>
+          <li>Complex character commissions</li>
+
+        </ul>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="section about" id="about">
+
+      <div class="about-inner">
+
+        <div class="eyebrow">
+          About Millaira Studio
+        </div>
+
+        <h2>
+          Handmade, one character at a time.
+        </h2>
+
+        <p>
+          Millaira Studio is an independent creative studio
+          focused on turning digital characters and original
+          designs into physical handmade pieces.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer id="contact">
+
+    <div class="footer-inner">
+
+      <div>
+        <strong>MILLAIRA STUDIO</strong>
+        <p>Handmade character figures & creative commissions.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#shop">Shop</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="mailto:millairastudio@gmail.com">Email</a>
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
